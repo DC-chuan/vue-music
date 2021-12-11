@@ -1,0 +1,93 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "432096",
+      "name": "users",
+      "font_class": "users",
+      "unicode": "e830",
+      "unicode_decimal": 59440
+    },
+    {
+      "icon_id": "689264",
+      "name": "立方体 立体 多面体 方块2",
+      "font_class": "lifangtilitiduomiantifangkuai2",
+      "unicode": "e7fb",
+      "unicode_decimal": 59387
+    },
+    {
+      "icon_id": "826948",
+      "name": "登录",
+      "font_class": "denglu-copy",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "1327496",
+      "name": "shop",
+      "font_class": "shop",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1500007",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "1727362",
+      "name": "25单据",
+      "font_class": "danju",
+      "unicode": "e89b",
+      "unicode_decimal": 59547
+    },
+    {
+      "icon_id": "5387489",
+      "name": "折叠导航",
+      "font_class": "zhediedaohang",
+      "unicode": "eae8",
+      "unicode_decimal": 60136
+    },
+    {
+      "icon_id": "7533293",
+      "name": "主题",
+      "font_class": "zhuti",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "8453431",
+      "name": "查看密码",
+      "font_class": "chakanmima",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "10793064",
+      "name": "password",
+      "font_class": "password",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "12974860",
+      "name": "报表",
+      "font_class": "baobiao",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "15625591",
+      "name": "默认头像",
+      "font_class": "morentouxiangbeifen",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    }
+  ]
+}
