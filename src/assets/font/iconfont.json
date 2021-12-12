@@ -20,6 +20,13 @@
       "unicode_decimal": 59387
     },
     {
+      "icon_id": "749770",
+      "name": "注册",
+      "font_class": "zhuce",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "826948",
       "name": "登录",
       "font_class": "denglu-copy",
@@ -48,6 +55,13 @@
       "unicode_decimal": 59547
     },
     {
+      "icon_id": "2506221",
+      "name": "注册",
+      "font_class": "zhuce1",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
       "icon_id": "5387489",
       "name": "折叠导航",
       "font_class": "zhediedaohang",
@@ -74,6 +88,13 @@
       "font_class": "password",
       "unicode": "e625",
       "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "11372775",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e8c6",
+      "unicode_decimal": 59590
     },
     {
       "icon_id": "12974860",

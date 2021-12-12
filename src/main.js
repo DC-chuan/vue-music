@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import './element/element'
+import './element/atui'
+import './element/elementui'
 import 'at-ui-style'
 // 引入全局样式
 import './assets/css/global.css'

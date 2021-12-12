@@ -8,6 +8,8 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownItem,
+    Modal,
+    Message
     } from 'at-ui'
 Vue.use(Input)
 Vue.use(Menu)
@@ -17,4 +19,5 @@ Vue.use(ButtonGroup)
 Vue.use(Dropdown)
 Vue.use(DropdownItem)
 Vue.use(DropdownMenu)
-
+Vue.use(Modal)
+Vue.prototype.$Message = Message

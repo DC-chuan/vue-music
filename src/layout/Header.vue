@@ -29,22 +29,35 @@
                             <at-dropdown-item name="#3BA776" >清新绿</at-dropdown-item>
                         </at-dropdown-menu>
                     </at-dropdown>  
-                    <at-button class="login-btn"><i class="iconfont icon-denglu-copy"></i></at-button>
+                    <at-button class="login-btn"  @click="handelLogin"><i class="iconfont icon-denglu-copy"></i></at-button>
                 </at-button-group>
            </div>
+           <!-- 登录组件 -->
            
         </div> 
-        
+        <Login v-show="isLogin" ref="login"/>
     </div>
 </template>
 
 <script>
+import Login from '../components/content/Login.vue'
 export default {
     name:'Header',
+    components:{Login},
     data(){
         return{
-            inputValue2:''
+            inputValue2:'',
+            isLogin:false
         }
+    },
+    methods:{
+        handelLogin(){
+            this.isLogin = !this.isLogin
+        }
+    },
+    mounted(){
+        // 监听取消登录操作
+        this.$refs.login.$on('cancelLogin',this.handelLogin)
     }
 }
 </script>
@@ -53,7 +66,7 @@ export default {
     .header-box{
         height: 50px;
         width: 100%;
-        background-color: #222225;
+        background-color: #212124;
         color: aliceblue;
         border-bottom: 3px solid red;
     }
@@ -72,6 +85,7 @@ export default {
         margin-left: 5px;
     }
     .header-input{
+        margin-left: 70px;
         width:30%;
         height: 40px;
     }
@@ -98,6 +112,7 @@ export default {
       justify-content: center;
       align-items: center;
       text-align: center;
+      opacity: 0.5;
     }
     .thyme-btn,
     .login-btn{
