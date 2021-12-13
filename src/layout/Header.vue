@@ -8,8 +8,8 @@
            
            <div class="button-group">
                <at-button-group>
-                    <at-button class="ahead-back"><i class="icon icon-chevron-left"></i></at-button>
-                    <at-button class="ahead-back"><i class="icon icon-chevron-right"></i></at-button>
+                    <at-button class="ahead-back"><i class="icon icon-chevron-left" @click="go(-1)"></i></at-button>
+                    <at-button class="ahead-back"><i class="icon icon-chevron-right" @click="go(1)"></i></at-button>
                 </at-button-group>
            </div>
            <div class="header-input">
@@ -30,12 +30,15 @@
                         </at-dropdown-menu>
                     </at-dropdown>  
                     <at-button class="login-btn"  @click="handelLogin"><i class="iconfont icon-denglu-copy"></i></at-button>
+                    <at-button class="login-btn login-btn2"><a href="https://github.com/DC-chuan"><i class="icon icon-github"></i></a></at-button>
                 </at-button-group>
            </div>
            <!-- 登录组件 -->
            
         </div> 
-        <Login v-show="isLogin" ref="login"/>
+       <transition name="el-fade-in">
+            <Login v-show="isLogin" ref="login"/>
+       </transition>
     </div>
 </template>
 
@@ -53,6 +56,10 @@ export default {
     methods:{
         handelLogin(){
             this.isLogin = !this.isLogin
+        },
+        go(index){
+            this.$store.commit('savePath',index)
+            this.$router.go(index)
         }
     },
     mounted(){
@@ -113,22 +120,29 @@ export default {
       align-items: center;
       text-align: center;
       opacity: 0.5;
+      z-index: 999;
     }
     .thyme-btn,
     .login-btn{
+        height: 38px;
+        width: 50px;
         background-color: #212124;
         border: 1px solid #4f4f4f;
         margin-top: 5px;
+        align-items: center;
+        color: cyan;
     }
     .ahead-back:hover,
     .thyme-btn:hover,
     .login-btn:hover{
         background-color: #212124;
-        border: 1px solid #ccc;
-        
+        border: 1px solid cyan;    
     }
     .login-btn{
         margin-left: 30px;
+    }
+    .login-btn2 a{
+        text-decoration: none;
     }
     .at-dropdown-menu{
         color: black;

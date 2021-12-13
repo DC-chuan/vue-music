@@ -137,6 +137,7 @@ export default {
     color: black;
     border: 1px solid #ccc;
     box-shadow: 0.1 0 0.3;
+    z-index: 9999;
 }
 .longin-cancel{
     width: 100%;

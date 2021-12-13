@@ -34,6 +34,20 @@
       "unicode_decimal": 58938
     },
     {
+      "icon_id": "1125557",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "1149067",
+      "name": "我喜欢的",
+      "font_class": "woxihuande",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
       "icon_id": "1327496",
       "name": "shop",
       "font_class": "shop",
@@ -62,11 +76,25 @@
       "unicode_decimal": 58946
     },
     {
+      "icon_id": "3092114",
+      "name": "排行榜",
+      "font_class": "paihangbang",
+      "unicode": "e782",
+      "unicode_decimal": 59266
+    },
+    {
       "icon_id": "5387489",
       "name": "折叠导航",
       "font_class": "zhediedaohang",
       "unicode": "eae8",
       "unicode_decimal": 60136
+    },
+    {
+      "icon_id": "6622382",
+      "name": "我的收藏",
+      "font_class": "wodeshoucang",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
     },
     {
       "icon_id": "7533293",
@@ -83,11 +111,18 @@
       "unicode_decimal": 59023
     },
     {
+      "icon_id": "10463896",
+      "name": "视频",
+      "font_class": "shipin",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
       "icon_id": "10793064",
       "name": "password",
       "font_class": "password",
-      "unicode": "e625",
-      "unicode_decimal": 58917
+      "unicode": "e626",
+      "unicode_decimal": 58918
     },
     {
       "icon_id": "11372775",

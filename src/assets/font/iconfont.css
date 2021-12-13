@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1639298796819') format('truetype');
+  src: url('iconfont.ttf?t=1639317754013') format('truetype');
 }
 
 .iconfont {
@@ -27,6 +27,14 @@
   content: "\e63a";
 }
 
+.icon-faxian:before {
+  content: "\e608";
+}
+
+.icon-woxihuande:before {
+  content: "\e625";
+}
+
 .icon-shop:before {
   content: "\e611";
 }
@@ -43,8 +51,16 @@
   content: "\e642";
 }
 
+.icon-paihangbang:before {
+  content: "\e782";
+}
+
 .icon-zhediedaohang:before {
   content: "\eae8";
+}
+
+.icon-wodeshoucang:before {
+  content: "\e64d";
 }
 
 .icon-zhuti:before {
@@ -55,8 +71,12 @@
   content: "\e68f";
 }
 
+.icon-shipin:before {
+  content: "\e62a";
+}
+
 .icon-password:before {
-  content: "\e625";
+  content: "\e626";
 }
 
 .icon-shouji:before {
