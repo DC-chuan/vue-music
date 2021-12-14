@@ -28,9 +28,7 @@ export default {
         this.loading=false
         const {data:data} = await _getMusicForm(10)
         this.musicForm = data.result
-        console.log(data.result);
         const {data:url} = await _getPernsonSend(3)
-        console.log(url);
         this.sendResult = url.result
     },
     data(){

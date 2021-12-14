@@ -26,3 +26,20 @@ export const verifyCode = ((phone,captcha)=>{
         }
     })
 })
+
+// 发起登录请求
+export const _login = (data)=>{
+    return axios({
+        method:'post',
+        url:'login/cellphone',
+        data:qs.stringify(data)
+    })
+}
+
+// 退出登录
+export const _logout = ()=>{
+    return axios({
+        method:'get',
+        url:'logout'
+    })
+}

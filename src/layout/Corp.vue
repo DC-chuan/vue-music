@@ -36,17 +36,21 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
     name:'Corp',
     data(){
         return{
-            path: this.$store.state.path
+           
         }
     },
      methods: {
          getPath(index){
             this.$store.commit('savePath',index)
          }
+    },
+    computed:{
+        ...mapGetters({path:'getPath'})
     }
 }
 </script>

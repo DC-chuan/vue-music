@@ -9,7 +9,8 @@ import {
     DropdownMenu,
     DropdownItem,
     Modal,
-    Message
+    Message,
+    LoadingBar
     } from 'at-ui'
 Vue.use(Input)
 Vue.use(Menu)
@@ -20,4 +21,7 @@ Vue.use(Dropdown)
 Vue.use(DropdownItem)
 Vue.use(DropdownMenu)
 Vue.use(Modal)
+
 Vue.prototype.$Message = Message
+    
+Vue.prototype.$process = LoadingBar

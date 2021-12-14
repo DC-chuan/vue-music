@@ -64,7 +64,9 @@ export default {
     },
     mounted(){
         // 监听取消登录操作
-        this.$refs.login.$on('cancelLogin',this.handelLogin)
+        this.$refs.login.$on('cancelLogin',()=>{
+            this.isLogin = !this.isLogin
+        })
     }
 }
 </script>
