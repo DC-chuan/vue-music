@@ -1,8 +1,10 @@
 <template>
-    <div class="discover-box" v-loading="loading" element-loading-text="拼命加载中">
-      <div class="discover-banner" >
+    <div class="discover-box"  v-loading="loading" element-loading-text="等会嗷~"   element-loading-background="#16181C">
+      <keep-alive>
+          <div class="discover-banner" >
           <Swiper :banner= 'banner' ref="swiper" /> 
       </div>
+      </keep-alive>
       <div class="discover-recommend">
           <RecommendList :musicForm= 'musicForm' />
       </div>
@@ -25,11 +27,11 @@ export default {
     async beforeCreate(){
         const {data:res} = await _getBanner()
         this.banner = res.banners
-        this.loading=false
         const {data:data} = await _getMusicForm(10)
         this.musicForm = data.result
         const {data:url} = await _getPernsonSend(3)
         this.sendResult = url.result
+        this.loading=false
     },
     data(){
         return{

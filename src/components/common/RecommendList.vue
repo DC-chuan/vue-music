@@ -1,13 +1,19 @@
 <template>
-  <div class="recommend-box">
+      <div class="recommend-box">
       <div class="recommend-header">
-          <span style="font-size:20px; cursor:default ;">推荐歌单</span>
+          <span style="font-size:20px; cursor:default ;" >推荐歌单</span>
           <span class="getMoreMusicList">更多<i class="el-icon-arrow-right"></i></span>
       </div>
       <div class="recommend-music-list">
-          <div class="recommend-music-item" v-for="(item,index) in musicForm" :key="index">
-              <img :src="item.picUrl" alt="">
-              <div class="recommend-music-detail">{{item.name}}</div>
+          <div class="recommend-music-item"  v-for="(item,index) in musicForm" :key="index" >
+                   <div  class="recommend-discribe"  ref='item'>{{item.copywriter}}</div>
+                    <template  v-if="item">
+                        <img :src="item.picUrl" 
+                        @click="detail(item.id)" 
+                        @mouseover="controlHidden(index)" 
+                        @mouseleave="controlShow(index)">
+                    </template>
+                <div class="recommend-music-detail">{{item.name}}</div>
           </div>
       </div>
   </div>
@@ -17,7 +23,19 @@
 export default {
     props:['musicForm'],
     methods:{
-        
+        detail(id){
+            console.log(id);
+            this.$router.push({
+                name:'/musicdetail',
+                params:{id:id}
+            })
+        },
+        controlHidden(index){
+            this.$refs.item[index].className = 'transitionShow'
+        },   
+        controlShow(index){
+            this.$refs.item[index].className = 'transitionHidden'
+        } 
     },
 }
 </script>
@@ -45,7 +63,20 @@ export default {
         background-color: black;
         margin-left: 10px;
         cursor: pointer;
-        
+        position: relative;
+        overflow: hidden;
+    }
+    .recommend-discribe{
+        display: none;
+        position: absolute;
+        color: floralwhite;
+        text-align: center;
+        font-size: 13px;
+        line-height: 30px;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+
     }
     .recommend-music-list .recommend-music-item:nth-child(1),
     .recommend-music-list .recommend-music-item:nth-child(6){
@@ -63,5 +94,20 @@ export default {
         padding: 0 5px;
         font-family: SimSun;
         color: #CFD0D7;
+    }
+    .transitionHidden{
+        display: none;
+    }
+    .transitionShow{
+        opacity: 0.8;
+        background-color: rgb(114, 113, 113);
+        position: absolute;
+        color: floralwhite;
+        text-align: center;
+        font-size: 13px;
+        line-height: 30px;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 </style>

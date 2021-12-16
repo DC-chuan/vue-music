@@ -16,6 +16,9 @@ import './plugins/index'
 Vue.config.productionTip = false
 
 new Vue({
+  beforeCreate(){
+    Vue.prototype.$bus = this
+  },
   store,
   router,
   render: h => h(App),

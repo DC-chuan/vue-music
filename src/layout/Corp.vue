@@ -28,9 +28,8 @@
             </el-menu>
         </div>
         <div class="aside">
-            <keep-alive>
+          
                 <router-view></router-view>
-            </keep-alive>
         </div>
     </div>
 </template>
@@ -58,12 +57,13 @@ export default {
 <style scoped>
     .corp-box{
         display: flex;
+       
     }
     .menu-menu{
         width: 200px;
         height: 640px;
         background-color: #212124;
- 
+        border-right: 1px solid #161618;
     }
     .el-menu{
         overflow: hidden;
@@ -82,4 +82,5 @@ export default {
         height: 640px;  
         background-color: #212124;
     }
+    
 </style>

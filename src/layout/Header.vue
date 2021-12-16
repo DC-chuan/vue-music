@@ -74,7 +74,7 @@ export default {
 <style scoped>
     .header-box{
         height: 50px;
-        width: 100%;
+        width: 1536px;;
         background-color: #212124;
         color: aliceblue;
         border-bottom: 3px solid red;

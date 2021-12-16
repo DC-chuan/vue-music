@@ -1,9 +1,33 @@
 import axios from "axios";
 import './http'
 
-export const FoundMusic = ()=>{
+
+// 根据音乐的id值获取歌曲URL  /song/url?id=33894312
+export const _getMusicById = (...rest)=>{
     return axios({
         method:'get',
-        url:'homepage/block/page'
+        url:'song/url',
+        params:{
+            id: rest
+        }
+    })
+}
+
+// 获取歌曲详情信息
+export const _getMusicDetail = (...rest)=>{
+    return axios({
+        method:'get',
+        url:`song/detail?ids=${rest}`,  
+    })
+}
+
+// 搜索音乐
+export const _search = (keywords) =>{
+    return axios({
+        method:'get',
+        url:'search',
+        params:{
+            keywords
+        }
     })
 }

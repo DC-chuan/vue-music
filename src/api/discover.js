@@ -21,6 +21,23 @@ export const _getMusicForm = (limit)=>{
     })
 }
 
+// 获取歌单详情信息
+export const _playlistDetail = (id)=>{
+    return axios({
+        method:'get',
+        url:'playlist/detail',
+        params:{id}
+    })
+}
+
+// 获取歌曲详情信息
+export const _getMusicDetail = (...rest)=>{
+    return axios({
+        method:'get',
+        url:`song/detail?ids=${rest}`,  
+    })
+}
+
 // 获取独家放送信息
 export const _getPernsonSend = (limit)=>{
     return axios({
