@@ -10,7 +10,6 @@
 import Header from './layout/Header.vue'
 import Corp from './layout/Corp.vue'
 import Footer from './layout/Footer.vue'
-import {FoundMusic} from './api/found'
 export default {
   components: { Header ,Corp,Footer},
   name: 'App',

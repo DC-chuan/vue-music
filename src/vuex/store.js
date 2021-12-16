@@ -1,10 +1,28 @@
 import Vue from "vue";
 import Vuex from 'vuex'
 
+import createPersistedState from 'vuex-persistedstate'
+
 Vue.use(Vuex)
+const state = {
+    path: 'discover',
+    cookie: '',
+    avatar: null,
+    uid: '',
+    user: null,
+    nickname: null,
+    logined: false,
+    songInfo: [],
+}
 
 const actions = {
-    
+    SaveSongInfo(context,value){
+        // 如果数组中已经有了这一项 就不保存
+        if(!context.state.songInfo.some(item=>item.id == value.id)){
+            if(!(context.state.songInfo.length >20)) return context.commit('SaveSongInfo',value)
+            context.commit('FormatSongInfo',value)
+        }
+    }
 }
 
 const mutations = {
@@ -20,22 +38,22 @@ const mutations = {
         state.uid = userinfo.profile.userId
     },
     isLogin(state,value){
-        state.logined = true
+        state.logined = true;
     },
     logout(state,value){
-        state.logined = false
+        state.logined = false;
+    },
+    //当state中歌曲的 id 数组长度超过二十
+    FormatSongInfo(state,value){
+        state.songInfo.pop();
+        state.songInfo.unshift(value);
+    },
+    SaveSongInfo(state,value){
+        state.songInfo.unshift(value);
     }
 }
 
-const state = {
-    path: 'discover',
-    cookie:'',
-    avatar:null,
-    uid:'',
-    user:null,
-    nickname:null,
-    logined:false
-}
+
 
 const getters = {
     getPath(state){
@@ -59,7 +77,13 @@ const getters = {
         }
         return state.nickname && state.user.profile.nickname
     },
+    //获取歌曲数据列表
+    getSongInfo(state){ 
+        return state.songInfo
+    },
 }
+
+export const plugins = [createPersistedState()]
 
 
 export default new Vuex.Store({
@@ -67,4 +91,5 @@ export default new Vuex.Store({
     mutations,
     state,
     getters,
+    plugins,
 })

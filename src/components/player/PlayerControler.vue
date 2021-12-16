@@ -1,7 +1,6 @@
 <template>
    <div class="control-box">
        <audio 
-       autoplay
        :src="url" ref="audio"
        @canplay="getDuration"
        @timeupdate="getCurrentTime" >
@@ -28,8 +27,8 @@
         </div>
         
         <div class="audio-vloume">
-            <div class="volume-icon">
-                <i v-show="volumeFlag" class="iconfont icon-yinliang"></i>
+            <div class="volume-icon" @click="volumeClick">
+                <i v-show="volumeFlag"  class="iconfont icon-yinliang"></i>
                 <i v-show="!volumeFlag" class="iconfont icon-jingyin"></i>
             </div>
             <div class="volume-slider">
@@ -64,13 +63,15 @@ export default {
         initAudio(){
             const self = this;
             self.audioDom = this.$refs.audio;
-            self.audioDom.loop = false; //关闭循环播放
+            self.audioDom.loop = true; //关闭循环播放
             self.audioDom.load();//重新加载标签
             // 当收到总时长 分辨率 子轨等信息时触发该事件
             self.audioDom.addEventListener("loadedmetadata",function(){
                 self.duration = self.getDuration(); //计算
                 self.volumeSize = self.audioDom.volume * 100; //音量大小
                 self.volumeHistory = self.audioDom.volume * 100; //音量大小
+                self.audioDom. autoplay = true;
+                this.playFlag = false;
             });
             this.musicProcess = 0; 
             //监听音乐是否播放完成
@@ -147,7 +148,18 @@ export default {
                 this.audioDom.volume = 1;
                 this.volumeFlag = true; // 当音量有时，不静音
             }
-        }    
+        },
+        //点击静音
+        volumeClick() {
+            this.volumeFlag = !this.volumeFlag;
+            if (!this.volumeFlag) {
+                this.audioDom.volume = 0;
+                this.volumeSize = 0;
+            } else {
+                this.audioDom.volume = this.volumeHistory / 100;
+                this.volumeSize = this.volumeHistory;
+            }
+        }
     },
     mounted() {
         let that = this;
@@ -214,6 +226,9 @@ export default {
     }
     .volume-icon{
         width: 50px;
+    }
+    .volume-icon i:hover{
+        color: aqua;
     }
     .audio-vloume i {
         font-size: 35px;

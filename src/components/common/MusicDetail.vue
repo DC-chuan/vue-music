@@ -107,8 +107,8 @@ export default {
         getHeaderClass({row, column, rowIndex, columnIndex}){
                 return "background:#1A1C20;"
         },
-        getId(value){
-            this.$bus.$emit('sendId',value)
+        getId(id){
+           this.$bus.$emit('sendId',id)
         }
     },
     computed:{
@@ -129,6 +129,9 @@ export default {
         }
         
     },
+    beforeDestroy(){
+        this.$bus.$off('sendId')
+    }
 }
 </script>
 
