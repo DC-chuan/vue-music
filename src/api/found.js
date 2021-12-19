@@ -21,7 +21,7 @@ export const _getMusicDetail = (...rest)=>{
     })
 }
 
-// 搜索音乐
+// 根据关键词搜索
 export const _search = (keywords) =>{
     return axios({
         method:'get',
