@@ -18,7 +18,7 @@ const state = {
 const actions = {
     SaveSongInfo(context,value){
         // 如果数组中已经有了这一项 就不保存
-        if(!context.state.songInfo.some(item=>item.id == value.id)){
+        if(!context.state.songInfo.some(item=>item.songId == value.songId)){
             if(!(context.state.songInfo.length >20)) return context.commit('SaveSongInfo',value)
             context.commit('FormatSongInfo',value)
         }
@@ -50,6 +50,14 @@ const mutations = {
     },
     SaveSongInfo(state,value){
         state.songInfo.unshift(value);
+    },
+    //根据id值删除对应的一项
+    removeInfo(state,value){
+        const arr = state.songInfo.filter(item=>{
+            return item.songId !== value.songId
+        })
+        state.songInfo = arr
+        console.log(arr);
     }
 }
 

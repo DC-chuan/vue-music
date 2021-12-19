@@ -24,7 +24,6 @@ export default {
     props:['musicForm'],
     methods:{
         detail(id){
-            console.log(id);
             this.$router.push({
                 name:'/musicdetail',
                 params:{id:id}

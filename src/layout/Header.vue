@@ -13,11 +13,7 @@
                 </at-button-group>
            </div>
            <div class="header-input">
-                <at-input  placeholder="请输入内容" append-button>
-                    <template slot="append">
-                        <i class="icon icon-search"></i>
-                    </template>
-                </at-input>
+                <Search/>
            </div>
            <div class="thyme-login">
                <at-button-group>
@@ -44,9 +40,10 @@
 
 <script>
 import Login from '../components/content/Login.vue'
+import Search from '../components/content/Search.vue'
 export default {
     name:'Header',
-    components:{Login},
+    components:{Login,Search},
     data(){
         return{
             inputValue2:'',

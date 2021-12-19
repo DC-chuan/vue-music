@@ -70,7 +70,7 @@ export default {
                 self.duration = self.getDuration(); //计算
                 self.volumeSize = self.audioDom.volume * 100; //音量大小
                 self.volumeHistory = self.audioDom.volume * 100; //音量大小
-                self.audioDom. autoplay = true;
+                self.audioDom.autoplay = true;
                 this.playFlag = false;
             });
             this.musicProcess = 0; 

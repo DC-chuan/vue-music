@@ -49,10 +49,10 @@ export default {
   }
   .music-name{
     color: lightgrey;
-    font-size: 17px;
+    font-size: 14px;
   }
   .music-songer{
     color: slategray;
-    font-size: 13px;
+    font-size: 12px;
   }
 </style>

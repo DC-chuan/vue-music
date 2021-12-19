@@ -83,6 +83,13 @@
       "unicode_decimal": 58946
     },
     {
+      "icon_id": "2815702",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e543",
+      "unicode_decimal": 58691
+    },
+    {
       "icon_id": "3092114",
       "name": "排行榜",
       "font_class": "paihangbang",
@@ -95,6 +102,13 @@
       "font_class": "zhediedaohang",
       "unicode": "eae8",
       "unicode_decimal": 60136
+    },
+    {
+      "icon_id": "5387543",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "eafb",
+      "unicode_decimal": 60155
     },
     {
       "icon_id": "6622382",

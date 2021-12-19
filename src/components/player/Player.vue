@@ -21,9 +21,10 @@ import { _getMusicDetail } from '../../api/discover'
 export default {
     components:{PlayerArt,PlayerControler,PlayerList},
     mounted() {
-        this.$bus.$on('sendId',(id)=>{
-        this.getSong(id)
-       })
+        this.$bus.$on('sendId',(id)=>{this.getSong(id)})
+        this.$bus.$on('listSong',(info)=>{
+            this.getSong(info.songId)
+        })
     },
     data() {
         return {
@@ -39,24 +40,24 @@ export default {
     },
     methods:{
         async getSong(id){
-        const that = this;
-        this.songInfo.songId = id;
-            // 音乐url
-        const {data:res} = await _getMusicById(id)
-        // 音乐URL
-        this.songInfo.musicUrl = res.data[0].url
-        // 获取音乐详情
-        const {data:result} = await  _getMusicDetail(id)
-        // console.log(result);
-        // 歌名
-        that.songInfo.songName = result.songs[0].name
-        // 歌曲图片
-        that.songInfo.picUrl = result.songs[0].al.picUrl;
-        // 歌曲详情
-        that.songInfo.songDetail = result.songs[0].alia;
-        // 歌手
-        that.songInfo.songer = result.songs[0].ar[0].name
-        this.$store.dispatch('SaveSongInfo',this.songInfo)
+            const that = this;
+            this.songInfo.songId = id;
+                // 音乐url
+            const {data:res} = await _getMusicById(id)
+            // 音乐URL
+            this.songInfo.musicUrl = res.data[0].url
+            // 获取音乐详情
+            const {data:result} = await  _getMusicDetail(id)
+            // console.log(result);
+            // 歌名
+            that.songInfo.songName = result.songs[0].name
+            // 歌曲图片
+            that.songInfo.picUrl = result.songs[0].al.picUrl;
+            // 歌曲详情
+            that.songInfo.songDetail = result.songs[0].alia;
+            // 歌手
+            that.songInfo.songer = result.songs[0].ar[0].name
+            this.$store.dispatch('SaveSongInfo',this.songInfo)
         },
     },
 }

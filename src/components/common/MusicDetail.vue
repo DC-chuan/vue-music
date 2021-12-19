@@ -102,7 +102,7 @@ export default {
     },
     methods:{
         getRowClass({ row, column, rowIndex, columnIndex }) {
-                return "background:#24262c;border:0;color:rgb(175, 173, 173)";
+                return "background:#24262c;border:0;color:rgb(175, 173, 173);cursor: pointer;";
         },
         getHeaderClass({row, column, rowIndex, columnIndex}){
                 return "background:#1A1C20;"
@@ -129,9 +129,6 @@ export default {
         }
         
     },
-    beforeDestroy(){
-        this.$bus.$off('sendId')
-    }
 }
 </script>
 
