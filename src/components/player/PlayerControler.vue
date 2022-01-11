@@ -5,10 +5,10 @@
     </audio>
     <!-- 播放控件 -->
     <div class="audio-btn">
-      <div class="play-btn"><i class="iconfont icon-shangyiqu"></i></div>
+      <div class="play-btn" @click="preMusic"><i class="iconfont icon-shangyiqu"></i></div>
       <div class="play-btn" v-show="playFlag" @click="musicPlay"><i class="iconfont icon-zanting"></i></div>
       <div class="play-btn" v-show="!playFlag" @click="musicPause"><i class="iconfont icon-bofangzhong"></i></div>
-      <div class="play-btn"><i class="iconfont icon-xiayiqu"></i></div>
+      <div class="play-btn" @click="nextMusic"><i class="iconfont icon-xiayiqu"></i></div>
     </div>
     <!-- 进度条 -->
     <div class="audio-slider">
@@ -149,6 +149,14 @@ export default {
         this.audioDom.volume = this.volumeHistory / 100;
         this.volumeSize = this.volumeHistory;
       }
+    },
+    // 点击上一曲
+    preMusic () {
+      this.$bus.$emit('preMusic', '1')
+    },
+    // 点击下一曲
+    nextMusic () {
+      this.$bus.$emit('nextMusic', '2')
     }
   },
   mounted () {
