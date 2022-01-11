@@ -4,10 +4,10 @@
           <div class="recent-header" >
             最近播放列表
           </div>
-          <div class="recent-item" v-for="item in songInfo" :key="item.id" v-show="!isNone">
+          <div class="recent-item" v-for="item in songInfo" :key="item.id" v-show="!isNone" style="margin-left:16px">
               <div class="recent-icon">
-                <i class="iconfont icon-bofang" @click="sendInfo(item)"></i>
-                <i class="iconfont icon-shanchu" @click="removeInfo(item)"></i>
+                <i class="iconfont icon-bofang" @click="sendInfo(item)" ></i>
+                <i class="iconfont icon-shanchu" @click="removeInfo(item)" style="margin-left:8px;"></i>
               </div>
               <div class="recent-song">{{item.songName}}</div>
               <div class="recent-songer">{{item.songer}}</div>
@@ -72,7 +72,7 @@ export default {
   position: absolute;
   width: 400px;
   height: 600px;
-  background-color: #212124;
+  background-color: #2D2F33;
   transform: translate(-52%,-103%);
   overflow: scroll;
   overflow-x: hidden;
@@ -127,7 +127,7 @@ export default {
   width: 45px;
 }
 .recent-song{
-  margin-left: 12px;
+  margin-left: 16px;
 }
 .recent-song,
 .recent-songer{

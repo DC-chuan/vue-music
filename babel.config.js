@@ -5,7 +5,7 @@ module.exports = {
   "plugins": [
     [
       "import", {
-     "libraryName": "at",
+      "libraryName": "at",
       "libraryDirectory": "src/components"
       }
     ],
@@ -15,6 +15,12 @@ module.exports = {
         libraryName: 'element-ui',
         styleLibraryName: 'theme-chalk'
       }
+    ],
+    ["import", {
+      "libraryName": "view-design",
+      "libraryDirectory": "src/components"
+      },
+      "view-desion"
     ]
   ]
 }

@@ -13,13 +13,16 @@ const state = {
     nickname: null,
     logined: false,
     songInfo: [],
+    searchHistoryList:[],//搜索历史
 }
 
 const actions = {
     SaveSongInfo(context,value){
         // 如果数组中已经有了这一项 就不保存
         if(!context.state.songInfo.some(item=>item.songId == value.songId)){
-            if(!(context.state.songInfo.length >20)) return context.commit('SaveSongInfo',value)
+            if(!(context.state.songInfo.length >20)) {
+                return context.commit('SaveSongInfo',value)
+            }
             context.commit('FormatSongInfo',value)
         }
     }
@@ -32,7 +35,7 @@ const mutations = {
     // 保存 用户信息
     addUser(state,userinfo){
         state.user = userinfo;
-        state.cookie = userinfo.cookie;
+        state.token = userinfo.token;
         state.avater = userinfo.profile.avatarUrl;
         state.nickname = userinfo.profile.nickname;
         state.uid = userinfo.profile.userId
@@ -57,7 +60,21 @@ const mutations = {
             return item.songId !== value.songId
         })
         state.songInfo = arr
-        console.log(arr);
+    },
+    //保存搜索历史
+    SaveSearchHistory(state,value){
+        if(state.searchHistoryList.includes(value)) return
+        state.searchHistoryList.push(value) 
+    },
+    // 删除选中的历史记录
+    deleteHistoryItem(state,value){
+        let index = state.searchHistoryList.indexOf(value);
+        state.searchHistoryList.splice(index,1)
+    },
+    // 删除全部历史记录
+    deleteAllHistory(state){
+        let length = state.searchHistoryList.length;
+        state.searchHistoryList.splice(0,length)
     }
 }
 
@@ -85,10 +102,17 @@ const getters = {
         }
         return state.nickname && state.user.profile.nickname
     },
+    getToken(state){
+      if (state.token) return true
+      return false
+    },
     //获取歌曲数据列表
     getSongInfo(state){ 
         return state.songInfo
     },
+    getSearchList(state){
+        return state.searchHistoryList
+    }
 }
 
 export const plugins = [createPersistedState()]

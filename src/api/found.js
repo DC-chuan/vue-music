@@ -31,3 +31,11 @@ export const _search = (keywords) =>{
         }
     })
 }
+
+//获取热搜列表（简略）
+export const _searchHot = ()=>{
+    return axios({
+        methods:'get',
+        url:'search/hot/detail'
+    })
+}

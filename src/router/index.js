@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 // 引入组件
 import Discover from '../views/Discover.vue'
 import MusicDetail from '../components/common/MusicDetail.vue'
+import SearchDetail from '../components/search/SearchDetail.vue'
 
 /**解决router重复报错 */
 const originalPush = VueRouter.prototype.push
@@ -11,10 +12,13 @@ const originalPush = VueRouter.prototype.push
 }
 
 Vue.use(VueRouter)
+
+
 const routes = [
     { path: '/' , redirect:'/discover'},
     { path:'/discover',component: Discover},
-    { name:'/musicdetail', path:'detail',component: MusicDetail }
+    { name:'/musicdetail', path:'detail',component: MusicDetail },
+    { name:'/searchdetail', path: 'searchdetail', component: SearchDetail}
 ]
 
 const router = new VueRouter({

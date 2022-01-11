@@ -10,7 +10,8 @@ import {
     Loading, 
     Table,
     TableColumn,
-    Slider
+    Slider,
+    MessageBox,
 } from 'element-ui'
 Vue.use(Form)
 Vue.use(FormItem)
@@ -24,4 +25,5 @@ Vue.use(TableColumn)
 Vue.use(Slider)
 Vue.use(Loading.directive);
 
+Vue.prototype.$confirm = MessageBox.confirm
 Vue.prototype.$loading = Loading.service;

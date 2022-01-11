@@ -10,3 +10,23 @@
     zoom: 1;
     /* 兼容IE 6-7 */
 }
+
+
+/* 修改 view-desion tab的样式*/
+
+/* tab栏 下边框 */
+.ivu-tabs-bar{
+    border-bottom: 1px solid #666 !important;
+}
+.ivu-tabs-ink-bar{
+    background-color: #DD001B !important;
+}
+.ivu-tabs-tab{
+    color: aliceblue;
+}
+.ivu-tabs-nav .ivu-tabs-tab-active{
+    color: #DD001B !important;
+}
+.ivu-tabs-nav .ivu-tabs-tab:hover{
+    color: brown !important;
+}

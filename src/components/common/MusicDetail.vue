@@ -56,7 +56,7 @@
 </template>
 
 <script>
-// 引入格式化事件脚本
+// 引入格式化时间脚本
 import {FormatDuration, formatTabel} from '../../util/dataFormat.js'
 import {_playlistDetail, _getMusicDetail} from '../../api/discover'
 export default {
@@ -121,10 +121,10 @@ export default {
             return this.$router.currentRoute.params.id
         },
         playCount(){
-            let num = 0
-            if(this.Count>9999){
-                num = this.Count/10000
-                return parseInt(num)+ '万'
+            let num = 0;
+            if(this.Count > 9999){
+            num = this.Count/10000;
+                return parseInt(num)+ '万';
             }
         }
         
