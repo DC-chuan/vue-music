@@ -53,7 +53,7 @@ export default {
     initAudio () {
       const self = this;
       self.audioDom = this.$refs.audio;
-      self.audioDom.loop = true; //关闭循环播放
+      self.audioDom.loop = false; //关闭循环播放
       self.audioDom.load();//重新加载标签
       // 当收到总时长 分辨率 子轨等信息时触发该事件
       self.audioDom.addEventListener("loadedmetadata", function () {
@@ -66,7 +66,7 @@ export default {
       this.musicProcess = 0;
       //监听音乐是否播放完成
       this.audioDom.addEventListener('ended', function () {
-        self.musicPause();
+        self.playFlag = true
       },
         false
       );
@@ -171,6 +171,12 @@ export default {
       setTimeout(() => {
         that.initAudio()
       }, 1000);
+    },
+    musicProcess (newV, oldV) {
+      if (newV >= 100) {
+        this.nextMusic(); // 播放完成切换下一首
+
+      }
     }
   }
 }
